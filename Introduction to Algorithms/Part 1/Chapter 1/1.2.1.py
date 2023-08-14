@@ -1,9 +1,9 @@
 import math
 
-def first(n):
+def first(n: int):
     return 8 * n ** 2
 
-def second(n):
+def second(n: int):
     return 64 * n * math.log2(n)
 
 n = 2

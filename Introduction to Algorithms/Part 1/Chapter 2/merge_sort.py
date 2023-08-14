@@ -1,6 +1,6 @@
 def merge(arr: list[int], left: int, mid: int, right: int):
-    left_arr = []
-    right_arr = []
+    left_arr: list[int] = []
+    right_arr: list[int] = []
     left_arr_len = mid - left
     right_arr_len = right - mid
     for i in range(left, mid):

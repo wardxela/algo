@@ -1,6 +1,6 @@
 # todo: handle not found case
 
-def binary_search(arr: list[int], item: int, left: int, right: int):
+def binary_search(arr: list[int], item: int, left: int, right: int) -> int:
     i = (left + right) // 2
     if item < arr[i]:
         return binary_search(arr, item, left, i)

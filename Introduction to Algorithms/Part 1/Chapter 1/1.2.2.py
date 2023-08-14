@@ -1,8 +1,8 @@
-def first(n):
+def first(n: int):
     return 100 * n ** 2
 
 
-def second(n):
+def second(n: int):
     return 2 ** n
 
 n = 1

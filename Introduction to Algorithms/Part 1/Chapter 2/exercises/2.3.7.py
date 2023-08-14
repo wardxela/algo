@@ -1,8 +1,8 @@
 # Given an array of integers and an integer value x, find out whether the array contains a sum that equals to x
 # Time complexity O(n)
 # Space complexity O(n)
-def find_sum(arr: list[int], x: int) -> bool :
-    f = set()
+def find_sum(arr: list[int], x: int) -> bool:
+    f: set[int] = set()
     for i in arr:
         if i in f:
             return True
