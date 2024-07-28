@@ -4,7 +4,7 @@ type RemoveNaughtyChildren<T> = {
   [K in keyof T as K extends `naughty_${string}` ? never : K]: T[K]
 };
 
-test('Filtering The Children (part 2)', () => {
+test('Filtering The Children (part 3)', () => {
   type SantasList = {
     naughty_tom: { address: '1 candy cane lane' };
     good_timmy: { address: '43 chocolate dr' };
