@@ -1,12 +1,20 @@
 {
   "name": "algo",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "description": "Этот репозиторий содержит большой набор задач на алгоритмы",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "dtslint types algo",
+    "vitest": "vitest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.4"
+  }
 }
