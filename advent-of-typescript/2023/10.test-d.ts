@@ -2,7 +2,7 @@ import { expectTypeOf, test } from 'vitest'
 
 type StreetSuffixTester<T extends string, S extends string> = T extends `${string}${S}` ? true : false;
 
-test('Is Santa Dyslexic?', () => {
+test('Christmas Street Suffix Tester', () => {
   type test_0_actual = StreetSuffixTester<'Candy Cane Way', 'Way'>;
   type test_0_expected = true;
   expectTypeOf<test_0_actual>().toEqualTypeOf<test_0_expected>()
