@@ -1,3 +1,3 @@
-module.exports = function (apiClient, cart) {
-  // ваше решение
+module.exports = (apiClient, cart) => {
+	// ваше решение
 };

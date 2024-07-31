@@ -1,10 +1,10 @@
-import { test, expectTypeOf } from 'vitest'
+import { expectTypeOf, test } from "vitest";
 
 // Answer
-type SantasFavoriteCookies = 'ginger-bread' | 'chocolate-chip';
+type SantasFavoriteCookies = "ginger-bread" | "chocolate-chip";
 
 // Test
-test('Christmas Cookies', () => {
-  type test_0_expected = 'ginger-bread' | 'chocolate-chip';
-  expectTypeOf<test_0_expected>().toEqualTypeOf<SantasFavoriteCookies>()
-})
+test("Christmas Cookies", () => {
+	type test_0_expected = "ginger-bread" | "chocolate-chip";
+	expectTypeOf<test_0_expected>().toEqualTypeOf<SantasFavoriteCookies>();
+});
