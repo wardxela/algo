@@ -1,0 +1,9 @@
+{
+  "name": "@algo/advent-of-code",
+  "version": "0.0.0",
+  "scripts": {},
+  "devDependencies": {
+    "@algo/typescript": "*",
+    "typescript": "^5.7.2"
+  }
+}

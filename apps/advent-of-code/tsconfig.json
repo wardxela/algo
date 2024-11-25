@@ -1,0 +1,3 @@
+{
+  "extends": "@algo/typescript/tsconfig.json",
+}

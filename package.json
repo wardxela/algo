@@ -1,23 +1,15 @@
 {
-	"name": "algo",
-	"version": "1.0.0",
-	"type": "module",
-	"private": true,
-	"description": "Этот репозиторий содержит большой набор задач на алгоритмы",
-	"scripts": {
-		"test": "dtslint types algo",
-		"lint": "biome check",
-		"lint:fix": "biome check --fix",
-		"vitest": "vitest"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
-		"@types/node": "^22.0.0",
-		"tsx": "^4.16.2",
-		"typescript": "^5.5.4",
-		"vitest": "^2.0.4"
-	}
+  "name": "algo",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Algorithms",
+  "scripts": {
+    "test": "npm run test -ws --if-present"
+  },
+  "author": "wardxela",
+  "workspaces": [
+    "apps/*",
+    "tooling/*"
+  ]
 }

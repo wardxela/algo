@@ -1,0 +1,4 @@
+{
+  "extends": "@algo/typescript/tsconfig.json",
+  "include": ["src"]
+}

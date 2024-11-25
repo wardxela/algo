@@ -1,0 +1,13 @@
+{
+  "name": "@algo/advent-of-typescript",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@algo/typescript": "*",
+    "@types/node": "^22.9.4",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.5"
+  }
+}
