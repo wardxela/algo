@@ -1,39 +1,43 @@
 export function solution(value: string): number {
-  const lines = value.split('\n')
+  const lines = value.split("\n");
 
-  const oxygenGeneratorRating = computeRating(lines, 'most')
-  const CO2ScrubberRating = computeRating(lines, 'least')
+  const oxygenGeneratorRating = computeRating(lines, "most");
+  const CO2ScrubberRating = computeRating(lines, "least");
 
-  return oxygenGeneratorRating * CO2ScrubberRating
+  return oxygenGeneratorRating * CO2ScrubberRating;
 }
 
-function computeRating(binaries: string[], criteria: 'most' | 'least'): number {
-  let i = 0
+function computeRating(binaries: string[], criteria: "most" | "least"): number {
+  let i = 0;
+  let currentBinaries = binaries;
 
-  while (binaries.length > 1) {
-    const { withOnes, withZeros } = binaries.reduce((acc, line) => {
-      if (line[i] === '1') {
-        acc.withOnes.push(line)
-      } else {
-        acc.withZeros.push(line)
-      }
-      return acc
-    }, {withZeros: [] as string[], withOnes: [] as string[]})
-    if (criteria === 'most') {
+  while (currentBinaries.length > 1) {
+    const { withOnes, withZeros } = currentBinaries.reduce(
+      (acc, line) => {
+        if (line[i] === "1") {
+          acc.withOnes.push(line);
+        } else {
+          acc.withZeros.push(line);
+        }
+        return acc;
+      },
+      { withZeros: [] as string[], withOnes: [] as string[] },
+    );
+    if (criteria === "most") {
       if (withOnes.length >= withZeros.length) {
-        binaries = withOnes
+        currentBinaries = withOnes;
       } else {
-        binaries = withZeros
+        currentBinaries = withZeros;
       }
     } else {
       if (withZeros.length <= withOnes.length) {
-        binaries = withZeros
+        currentBinaries = withZeros;
       } else {
-        binaries = withOnes
+        currentBinaries = withOnes;
       }
     }
-    i++
+    i++;
   }
 
-  return parseInt(binaries[0]!, 2)
+  return Number.parseInt(currentBinaries[0]!, 2);
 }

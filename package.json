@@ -4,13 +4,14 @@
   "type": "module",
   "private": true,
   "description": "Algorithms",
-  "scripts": {
-    "test": "npm run test -ws --if-present"
-  },
   "author": "wardxela",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "tooling/*"
-  ]
+  "scripts": {
+    "test": "npm run test -ws --if-present",
+    "check": "npx @biomejs/biome check",
+    "check:fix": "npx @biomejs/biome check --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  },
+  "workspaces": ["apps/*", "packages/*", "tooling/*"]
 }
