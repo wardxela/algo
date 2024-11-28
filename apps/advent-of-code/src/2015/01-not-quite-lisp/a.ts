@@ -1,3 +1,11 @@
 export function solution(value: string): number {
-  return 42;
+  let result = 0;
+  for (const char of value) {
+    if (char === "(") {
+      result++;
+    } else if (char === ")") {
+      result--;
+    }
+  }
+  return result;
 }

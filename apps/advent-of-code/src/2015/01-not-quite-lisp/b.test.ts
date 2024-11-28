@@ -10,7 +10,7 @@ test("Not Quite Lisp B Input Easy", async () => {
     "../input-easy.txt",
   );
   const inputText = (await fs.readFile(inputPath)).toString();
-  expect(solution(inputText)).toBe(2000);
+  expect(solution(inputText)).toBe(1);
 });
 
 test("Not Quite Lisp B Input Hard", async () => {
@@ -19,5 +19,5 @@ test("Not Quite Lisp B Input Hard", async () => {
     "../input-hard.txt",
   );
   const inputText = (await fs.readFile(inputPath)).toString();
-  expect(solution(inputText)).toBe(1993);
+  expect(solution(inputText)).toBe(1795);
 });
