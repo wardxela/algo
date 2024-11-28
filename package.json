@@ -9,12 +9,18 @@
     "test": "turbo run test",
     "test:dev": "turbo run test:dev",
     "check": "npx @biomejs/biome check",
-    "check:fix": "npx @biomejs/biome check --write"
+    "check:fix": "npx @biomejs/biome check --write",
+    "add-problem": "turbo generate problem"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@turbo/gen": "^2.3.3",
     "turbo": "^2.3.3"
   },
   "packageManager": "npm@10.8.3",
-  "workspaces": ["apps/*", "packages/*", "tooling/*"]
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tooling/*"
+  ]
 }
