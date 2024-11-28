@@ -2,7 +2,7 @@ import { expectTypeOf, test } from "vitest";
 
 // I guess it's unstable. Consider to add more tests or at least check for battle prove solution
 type SantaListProtector<T> = T extends object
-  ? T extends Function
+  ? T extends () => void
     ? T
     : {
         readonly [K in keyof T]: SantaListProtector<T[K]>;

@@ -56,7 +56,7 @@ class FileSystem {
           throw new Error(`You can't move any higher`);
         }
         break;
-      default:
+      default: {
         const nestedDir = this.dir.content[path];
         if (!nestedDir) {
           throw new Error(`Directory with name ${path} doesn't exist`);
@@ -65,6 +65,7 @@ class FileSystem {
           throw new Error(`You can't move into a file`);
         }
         this.dir = nestedDir;
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-import { readFile } from "fs/promises";
+import { readFile } from "node:fs/promises";
 
 const data = (await readFile("./2021/1_measurements/input.txt")).toString();
 
@@ -11,7 +11,7 @@ data
   .map((a) => +a)
   .reduce<number[]>((result, _, index, initial) => {
     if (index + 2 < initial.length) {
-      return [...result, initial.slice(index, index + 3).reduce(sum, 0)];
+      result.push(initial.slice(index, index + 3).reduce(sum, 0));
     }
     return result;
   }, [])

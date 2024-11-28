@@ -1,6 +1,6 @@
 import { expectTypeOf, test } from "vitest";
 
-type SantasList<A extends readonly any[], B extends readonly any[]> = [
+type SantasList<A extends readonly unknown[], B extends readonly unknown[]> = [
   ...A,
   ...B,
 ];

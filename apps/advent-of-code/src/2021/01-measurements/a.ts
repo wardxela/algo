@@ -1,4 +1,4 @@
-import { readFile } from "fs/promises";
+import { readFile } from "node:fs/promises";
 
 const data = (await readFile("./2021/1_measurements/input.txt")).toString();
 

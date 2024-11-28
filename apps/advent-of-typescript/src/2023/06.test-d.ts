@@ -16,7 +16,7 @@ test("Filtering The Children (part 1)", () => {
 
   type test_2_actual = FilterChildrenBy<
     string | number | (() => void),
-    Function
+    () => void
   >;
   type test_2_expected = string | number;
   expectTypeOf<test_2_actual>().toEqualTypeOf<test_2_expected>();

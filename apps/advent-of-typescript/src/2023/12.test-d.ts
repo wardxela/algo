@@ -1,8 +1,8 @@
 import { expectTypeOf, test } from "vitest";
 
-type FindSanta<T extends readonly any[]> = T extends [...infer R, "🎅🏼"]
+type FindSanta<T extends readonly unknown[]> = T extends [...infer R, "🎅🏼"]
   ? R["length"]
-  : T extends [...infer R, any]
+  : T extends [...infer R, unknown]
     ? FindSanta<R>
     : never;
 

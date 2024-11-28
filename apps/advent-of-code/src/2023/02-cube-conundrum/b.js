@@ -1,5 +1,4 @@
-import { readFileSync } from "fs";
-import { inspect } from "util";
+import { readFileSync } from "node:fs";
 
 const input = readFileSync("./input.txt").toString();
 

@@ -1,4 +1,4 @@
-import { inspect } from "util";
+import { inspect } from "node:util";
 import { getPuzzleInput } from "../../utils.js";
 
 const data = await getPuzzleInput(import.meta.url);
@@ -24,19 +24,19 @@ class Monkey {
   inspect(controller: MonkeyController) {
     const items = [...this.items];
     this.items = [];
-    items.forEach((level) => {
+    for (const level of items) {
       this.inspectCounter++;
-      level =
+      const value =
         calc(
           level,
           this.operation.operand === "old" ? level : this.operation.operand,
           this.operation.operator,
         ) % controller.commonDivider;
       controller.sendItem(
-        level,
-        level % this.divisibleBy === 0 ? this.trueMonkeyId : this.falseMonkeyId,
+        value,
+        value % this.divisibleBy === 0 ? this.trueMonkeyId : this.falseMonkeyId,
       );
-    });
+    }
   }
 
   addItem(value: number) {
@@ -62,14 +62,15 @@ class MonkeyController {
 
   play(rounds: number) {
     for (let i = 0; i < rounds; i++) {
-      Object.values(this.monkeyMap)
-        .sort((a, b) => a.id - b.id)
-        .forEach((monkey) => monkey.inspect(this));
+      const monkeys = Object.values(this.monkeyMap).sort((a, b) => a.id - b.id);
+      for (const monkey of monkeys) {
+        monkey.inspect(this);
+      }
     }
   }
 
   sendItem(value: number, toId: number) {
-    this.monkeyMap[toId].addItem(value);
+    this.monkeyMap[toId]!.addItem(value);
   }
 
   getMonkeyBusinessLevel() {
@@ -100,20 +101,20 @@ const monkeyRegExp =
 const monkeyController = new MonkeyController(
   [...data.matchAll(monkeyRegExp)].map(
     ([_, id, items, operation, divisibleBy, trueMonkeyId, falseMonkeyId]) => {
-      const [operator, operand] = operation.trim().split(" ");
+      const [operator, operand] = operation!.trim().split(" ");
       return new Monkey(
-        +id,
-        items
+        +id!,
+        items!
           .trim()
           .split(", ")
           .map((v) => +v),
         {
           operator: operator as Operator,
-          operand: operand === "old" ? operand : +operand,
+          operand: operand === "old" ? operand : +operand!,
         },
-        +divisibleBy,
-        +trueMonkeyId,
-        +falseMonkeyId,
+        +divisibleBy!,
+        +trueMonkeyId!,
+        +falseMonkeyId!,
       );
     },
   ),
