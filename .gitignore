@@ -1,3 +1,11 @@
+# Dependencies
 py-venv
 node_modules
+
+# Turbo
+.turbo
+
+# Misc
 .DS_Store
+
+.cache

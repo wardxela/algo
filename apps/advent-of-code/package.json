@@ -1,9 +1,10 @@
 {
   "name": "@algo/advent-of-code",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "test": "vitest run",
-    "dev": "vitest"
+    "test:dev": "vitest"
   },
   "devDependencies": {
     "@algo/typescript": "*",
