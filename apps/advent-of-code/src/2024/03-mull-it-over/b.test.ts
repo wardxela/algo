@@ -19,5 +19,5 @@ test("Mull It Over B Input Hard", async () => {
     "../input-hard.txt",
   );
   const inputText = (await fs.readFile(inputPath)).toString();
-  expect(solution(inputText)).toBe(1993);
+  expect(solution(inputText)).toBe(100450138);
 });
