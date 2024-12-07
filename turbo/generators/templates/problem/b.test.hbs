@@ -10,7 +10,7 @@ test("{{ titleCase title }} B Input Easy", async () => {
     "../input-easy.txt",
   );
   const inputText = (await fs.readFile(inputPath)).toString();
-  expect(solution(inputText)).toBe(2000);
+  expect(solution(inputText)).toBe(undefined);
 });
 
 test("{{ titleCase title }} B Input Hard", async () => {
@@ -19,5 +19,5 @@ test("{{ titleCase title }} B Input Hard", async () => {
     "../input-hard.txt",
   );
   const inputText = (await fs.readFile(inputPath)).toString();
-  expect(solution(inputText)).toBe(1993);
+  expect(solution(inputText)).toBe(undefined);
 });

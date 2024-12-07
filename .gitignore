@@ -12,3 +12,5 @@ node_modules
 
 # Vite
 tsconfig.vitest-temp.json
+
+.env

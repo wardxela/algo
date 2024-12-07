@@ -10,11 +10,12 @@
     "test:dev": "turbo run test:dev",
     "check": "npx @biomejs/biome check",
     "check:fix": "npx @biomejs/biome check --write",
-    "add-problem": "turbo generate problem"
+    "add-problem": "env-cmd turbo generate problem"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@turbo/gen": "^2.3.3",
+    "env-cmd": "^10.1.0",
     "turbo": "^2.3.3"
   },
   "packageManager": "npm@10.8.3",

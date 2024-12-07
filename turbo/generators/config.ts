@@ -63,7 +63,17 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       {
         type: "add",
         path: "{{ problemPath turbo.paths.root year day title }}/input-hard.txt",
-        templateFile: "templates/problem/input-hard.hbs",
+        transform: async (_, data) => {
+          const text = await fetch(
+            `https://adventofcode.com/${data.year}/day/${data.day}/input`,
+            {
+              headers: {
+                Cookie: `session=${process.env.AOC_SESSION}`,
+              },
+            },
+          ).then((res) => res.text());
+          return text;
+        },
       },
     ],
   });
